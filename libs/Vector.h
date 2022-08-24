@@ -24,6 +24,7 @@ class Vector2 {
     static void Output(const Vector2 currentVec);
     Vector2<T> Rotate(float angle);
     static T Length(const Vector2 currentVec);
+    static bool Equals(const Vector2 comparedObject1, const Vector2 comparedObject2);
 
     private: 
 
@@ -94,5 +95,12 @@ T Vector2<T>::Length(const Vector2 currentVec) {
     result = sqrt(pow(currentVec._x, 2) + pow(currentVec._y, 2));
     return result;
 } 
+
+template <typename T> 
+bool Vector2<T>::Equals(const Vector2 comparedObject1, const Vector2 comparedObject2) {
+    if (!((comparedObject1._x == comparedObject2._x) && (comparedObject1._y == comparedObject2._y))) return false;
+    
+    return true;
+}
 
 #endif // __VECTOR_H__

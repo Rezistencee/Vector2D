@@ -38,6 +38,16 @@ int main() {
     float length = Vector2<float>::Length(floatVec);
     
     std::cout << "\n\n" << "Vector length: " << length;
+
+    bool equal = Vector2<float>::Equals(floatVec, floatVec);
+
+    std::cout << "\n\n" << (equal ? "Equal" : "No equal");
+
+    Vector2<float> tempFloat(11.4, 34.7);
+
+    equal = Vector2<float>::Equals(floatVec, tempFloat);
+
+    std::cout << "\n\n" << (equal ? "Equal" : "No equal");
  
     getch();
 }
