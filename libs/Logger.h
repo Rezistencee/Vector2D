@@ -45,7 +45,7 @@ std::string Logger::getEnumLabel(loggerType enumType) {
 
 void Logger::ConsoleLog(loggerType logType, const std::string &message)
 {
-    std::cout << "\n" << "[" << getEnumLabel(logType) << "]" << " " << message;
+    std::cout << "\n" << "[" << getEnumLabel(logType) << "] :" << " " << message;
 }
 
 

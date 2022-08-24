@@ -6,6 +6,8 @@
 
 int main() {
     Logger log;
+    std::string message;
+    
     Vector2<int> vec(20, 40);
     Vector2<int> vec2(10, 20);
 
@@ -44,15 +46,17 @@ int main() {
 
     bool equal = Vector2<float>::Equals(floatVec, floatVec);
 
-    std::cout << "\n\n" << (equal ? "Equal" : "No equal");
+    message = (equal ? std::string("Equal") : std::string("No equal"));
+
+    log.ConsoleLog(INFO, message);
 
     Vector2<float> tempFloat(11.4, 34.7);
 
     equal = Vector2<float>::Equals(floatVec, tempFloat);
 
-    std::cout << "\n\n" << (equal ? "Equal" : "No equal");
+    message = (equal ? std::string("Equal") : std::string("No equal"));
 
-    log.ConsoleLog(INFO, "Test string!");
+    log.ConsoleLog(INFO, message);
     
     getch();
 }
