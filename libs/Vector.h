@@ -23,6 +23,7 @@ class Vector2 {
     
     static void Output(const Vector2 currentVec);
     Vector2<T> Rotate(float angle);
+    static T Length(const Vector2 currentVec);
 
     private: 
 
@@ -86,5 +87,12 @@ Vector2<T> Vector2<T>::Rotate(float angle) {
 
     return Vector2<T>(temporaryX, temporaryY);
 }
+
+template <typename T> 
+T Vector2<T>::Length(const Vector2 currentVec) {
+    T result = 0;
+    result = sqrt(pow(currentVec._x, 2) + pow(currentVec._y, 2));
+    return result;
+} 
 
 #endif // __VECTOR_H__

@@ -35,5 +35,9 @@ int main() {
 
     Vector2<float>::Output(floatVec);
 
+    float length = Vector2<float>::Length(floatVec);
+    
+    std::cout << "\n\n" << "Vector length: " << length;
+ 
     getch();
 }
