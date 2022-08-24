@@ -4,8 +4,6 @@
 #include "iostream"
 #include "math.h"
 
-#define PI 3.14
-
 template <typename T>
 class Vector2 {
     public:
@@ -79,7 +77,7 @@ void Vector2<T>::Output(const Vector2 currentVec)
 template <typename T> 
 Vector2<T> Vector2<T>::Rotate(float angle) {
     angle = fmod(angle, 360.0);
-    angle = ((angle) * PI / 180.0f);
+    angle = ((angle) * M_PI / 180.0f);
     float sinAngle = sin(angle);
     float cosAngle = cos(angle);
     
