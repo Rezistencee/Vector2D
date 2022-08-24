@@ -1,8 +1,11 @@
 #include "libs/Vector.h"
+#include "libs/Logger.h"
+
 #include "iostream"
 #include "conio.h"
 
 int main() {
+    Logger log;
     Vector2<int> vec(20, 40);
     Vector2<int> vec2(10, 20);
 
@@ -48,6 +51,8 @@ int main() {
     equal = Vector2<float>::Equals(floatVec, tempFloat);
 
     std::cout << "\n\n" << (equal ? "Equal" : "No equal");
- 
+
+    log.ConsoleLog(INFO, "Test string!");
+    
     getch();
 }
