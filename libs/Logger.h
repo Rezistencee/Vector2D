@@ -2,50 +2,33 @@
 #define __LOGGER_H__
 
 #include "iostream"
+#include "map"
 
-enum loggerType {
+enum Types {
     DEBUG,
     INFO,
-    WARNING
+    WARNING,
+    ERROR
 };
-
 
 class Logger {
     private:
 
-    std::string getEnumLabel(loggerType enumType);
+    std::map<Types, std::string> loggerType = {
+        {Types::DEBUG, "DEBUG"},
+        {Types::INFO, "INFO"},
+        {Types::WARNING, "WARNING"}, 
+        {Types::ERROR, "ERROR"}
+    };
 
     public:
 
-    void ConsoleLog(loggerType logType, const std::string &message);
-
+    void ConsoleLog(Types logType, const std::string &message);
 };
 
-std::string Logger::getEnumLabel(loggerType enumType) {
-    switch (enumType) {
-    case 0 : {
-        return "Debug";
-        break;
-    };
-
-    case 1 : {
-        return "INFO";
-        break;
-    };
-
-    case 2 : {
-        return "Warning";
-        break;
-    };
-        
-    default:
-        return "Not recognized...";
-    };
-};
-
-void Logger::ConsoleLog(loggerType logType, const std::string &message)
+void Logger::ConsoleLog(Types logType, const std::string &message)
 {
-    std::cout << "\n" << "[" << getEnumLabel(logType) << "] :" << " " << message;
+    std::cout << "\n" << "[" << loggerType.find(logType) -> second << "] :" << " " << message;
 }
 
 
